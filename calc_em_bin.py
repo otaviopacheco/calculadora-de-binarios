@@ -1,9 +1,3 @@
-# Inicio do codigo: (autor: Otavio)
-while True:
-    Op =  str(input("deseja continuar?"))  
-    if Op == "n":
-        break
-
 #Andrei 11/08/2024 5:50am :
 try:
     valor=(int(input("Digite um numero: ")))
