@@ -79,3 +79,6 @@ while True:
 
         print("Fim do programa")
         break
+# ficou muito grande, como eu pensei q ia ficar, tentei de toda forma reduzir a repetição de codigo mas n rolou 
+# deu tanto problema q nem vale apena listar 
+# se puderem revisar o codigo e tentar bugar p acharmos mais bugs vai ser otimo 
