@@ -79,15 +79,16 @@ while verificador:
         continuacao = continuacao.upper()
 
         if continuacao != "SIM" or continuacao == "S": 
-            break
-    # Problema de continuidade resolvido
-    # Finaliza o programa inteiro.
-    finalizar = str(input("deseja finalizar?: "))
-    finalizar = finalizar.upper()
-    if finalizar == "S" or finalizar == "SIM" :
-        break
-    else:
-        continue
+            # Problema de continuidade resolvido
+            # Finaliza o programa inteiro.
+            finalizar = str(input("deseja finalizar?: "))
+            finalizar = finalizar.upper()
+            if finalizar == "S" or finalizar == "SIM" :
+                break
+            else:
+                continue
+            
+        
 
 # ficou muito grande, como eu pensei q ia ficar, tentei de toda forma reduzir a repetição de codigo mas n rolou 
 # deu tanto problema q nem vale apena listar 
