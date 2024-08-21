@@ -6,6 +6,7 @@ decimalDois = 0
 vetorDeCalculos = []
 expoenteDoValorUm = 0
 expoenteDoValorDois = 0
+operacoesValidas = [ "S","SOMA","SUB","SUBTRACAO","SUBTRAÇÃO","MULTIPLIÇÃO","M","MULTIPLICACAO","D","DIV","DIVISÃO"]
 #  inicio do codigo 
 while verificador:
 
@@ -19,7 +20,6 @@ while verificador:
     for casaBinaria in valorUm:
             if casaBinaria != "1" and casaBinaria != "0"    :
                 verificador = True
-                # valorUm = input("O primeiro valor não é binario. Insira novamente")
                 print("O primeiro valor não é binario. Inicie o programa novamente.")
                 break
             else :
@@ -50,25 +50,29 @@ while verificador:
 
         operacao = str(input("Qual operação deseja fazer? \nS = Soma\nSub = Subtracao\nM = Multiplicacao\nDiv = Divisao\n")).upper()
         operacao = operacao.upper()
-
-        if operacao == "S" or operacao == "SOMA":
+    
+        if operacao == operacoesValidas[0] or operacao == operacoesValidas[1]:
             resultado = sum(vetorDeCalculos)
             print("o resultado é: {}".format(bin(resultado)))
 
-        elif operacao == "SUB" or operacao == "SUBTRACAO" or operacao == "SUBTRAÇÃO":
+        elif operacao == operacoesValidas[2] or operacao == operacoesValidas[3] or operacao == operacoesValidas[4]: 
             resultado = vetorDeCalculos[0] - vetorDeCalculos[1]
             print("o resultado é: {}".format(bin(resultado)))
 
-        elif operacao ==  "MULTIPLIÇÃO" or  operacao == "M" or "MULTIPLICACAO": 
+        elif operacao == operacoesValidas[5] or operacao == operacoesValidas[6] or operacao == operacoesValidas[7]: 
             resultado = vetorDeCalculos[0] * vetorDeCalculos[1]
             print("o resultado é: {}".format(bin(resultado)))
 
-        elif operacao ==  "D" or operacao == "DIVISAO" or "DIV" or operacao == "DIVISÃO": 
-            resultado = vetorDeCalculos[0] / vetorDeCalculos[1]
-            print("o resultado é: {}".format(bin(resultado)))
+        elif operacao == operacoesValidas[8] or operacao == operacoesValidas[9] or operacao == operacoesValidas[10]:
+            if vetorDeCalculos[1] == 0 or vetorDeCalculos[1] == 0:
+                print("Não é possivel dividir por zero.")
+            else:
+                resultado = int(vetorDeCalculos[0] / vetorDeCalculos[1])
+                print("o resultado é: {}".format(bin(resultado)))
         else: 
-            while operacao == operacao:
-                print("Operação invalida. Tente novamente")
+        
+                print("Operação invalida. Tente novamente.")
+                
     # quando o usuario optar por finalizar as operações e o programa
         continuacao = str(input("Deseja escolher outra operação? \nN = Não\nS = Sim"))
 
@@ -80,12 +84,10 @@ while verificador:
     # Finaliza o programa inteiro.
     finalizar = str(input("deseja finalizar?"))
     finalizar = finalizar.upper()
-    if finalizar != "NAO" or finalizar != "NãO" or finalizar != "N" :
-        verificador = False
+    if finalizar == "S" or finalizar == "SIM" :
+        break
     else:
         continue
-    if verificador == False:
-        break
 
 # ficou muito grande, como eu pensei q ia ficar, tentei de toda forma reduzir a repetição de codigo mas n rolou 
 # deu tanto problema q nem vale apena listar 
