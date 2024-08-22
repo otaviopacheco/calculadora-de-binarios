@@ -78,7 +78,7 @@ while verificador:
 
         continuacao = continuacao.upper()
 
-        if continuacao != "SIM" or continuacao == "S": 
+        if continuacao != "SIM" and continuacao != "S": 
             # Problema de continuidade resolvido
             # Finaliza o programa inteiro.
             finalizar = str(input("deseja finalizar?: "))
